@@ -18,7 +18,8 @@ body {
 
 body {
   background:
-    radial-gradient(circle at 50% 0%, rgba(216, 179, 93, 0.11), transparent 36rem),
+    radial-gradient(circle at 50% 0%, rgba(216, 179, 93, 0.12), transparent 34rem),
+    radial-gradient(circle at 100% 30%, rgba(245, 213, 138, 0.07), transparent 30rem),
     #030303;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
@@ -34,33 +35,51 @@ body {
   inset: 0;
   z-index: -20;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px);
   background-size: 88px 88px;
   mask-image: radial-gradient(circle at center, black, transparent 78%);
+}
+
+.luxury-shell::after {
+  content: "";
+  position: absolute;
+  inset: 1.25rem;
+  z-index: -15;
+  pointer-events: none;
+  border: 1px solid rgba(216, 179, 93, 0.08);
+  border-radius: 2.5rem;
 }
 
 .gold-orb {
   position: absolute;
   border-radius: 9999px;
   background: #d8b35d;
-  filter: blur(92px);
-  opacity: 0.23;
+  filter: blur(98px);
+  opacity: 0.22;
 }
 
 .gold-orb-primary {
-  top: 10%;
-  left: -8rem;
-  height: 20rem;
-  width: 20rem;
+  top: 7%;
+  left: -9rem;
+  height: 22rem;
+  width: 22rem;
 }
 
 .gold-orb-secondary {
   right: -10rem;
-  bottom: 4rem;
-  height: 24rem;
-  width: 24rem;
-  opacity: 0.18;
+  top: 34rem;
+  height: 25rem;
+  width: 25rem;
+  opacity: 0.17;
+}
+
+.gold-orb-tertiary {
+  bottom: 12rem;
+  left: 16%;
+  height: 20rem;
+  width: 20rem;
+  opacity: 0.11;
 }
 
 .gold-line {
@@ -69,7 +88,27 @@ body {
   height: 1px;
   width: 90vw;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(216, 179, 93, 0.38), transparent);
+  background: linear-gradient(90deg, transparent, rgba(216, 179, 93, 0.36), transparent);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #f5d58a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  height: 1px;
+  width: 2rem;
+  background: rgba(216, 179, 93, 0.78);
 }
 
 .gold-button,
@@ -115,52 +154,129 @@ body {
   color: #f5d58a;
 }
 
-.service-card {
+.hero-card,
+.section-panel,
+.cta-panel {
+  border: 1px solid rgba(216, 179, 93, 0.17);
+  border-radius: 2.5rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
+    linear-gradient(180deg, rgba(216, 179, 93, 0.065), rgba(0, 0, 0, 0)),
+    rgba(255, 255, 255, 0.025);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.service-card,
+.credential-card,
+.pricing-card {
   position: relative;
   overflow: hidden;
-  min-height: 17rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 2rem;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
-    rgba(255, 255, 255, 0.025);
-  padding: 2rem;
+    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.022)),
+    rgba(255, 255, 255, 0.024);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(16px);
   transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
 }
 
-.service-card::after {
+.service-card {
+  min-height: 14rem;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.credential-card {
+  min-height: 8.5rem;
+  border-radius: 1.5rem;
+  padding: 1.4rem;
+}
+
+.credential-card h3 {
+  margin-top: 1.4rem;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.credential-mark {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(216, 179, 93, 0.42);
+  color: #f5d58a;
+  background: rgba(216, 179, 93, 0.1);
+}
+
+.pricing-card {
+  border-color: rgba(216, 179, 93, 0.24);
+  border-radius: 1.75rem;
+  padding: 1.7rem;
+}
+
+.service-card::after,
+.credential-card::after,
+.pricing-card::after,
+.cta-panel::after {
   content: "";
   position: absolute;
-  inset: auto -20% -50% -20%;
-  height: 10rem;
-  background: radial-gradient(circle, rgba(216, 179, 93, 0.2), transparent 68%);
+  inset: auto -20% -55% -20%;
+  height: 11rem;
+  background: radial-gradient(circle, rgba(216, 179, 93, 0.22), transparent 68%);
   opacity: 0;
   transition: opacity 260ms ease;
 }
 
-.service-card:hover {
+.cta-panel::after {
+  inset: -40% 10% auto 10%;
+  height: 18rem;
+  opacity: 0.28;
+}
+
+.service-card:hover,
+.credential-card:hover,
+.pricing-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245, 213, 138, 0.34);
+  border-color: rgba(245, 213, 138, 0.38);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.032)),
     rgba(255, 255, 255, 0.03);
 }
 
-.service-card:hover::after {
+.service-card:hover::after,
+.credential-card:hover::after,
+.pricing-card:hover::after {
   opacity: 1;
 }
 
 @media (max-width: 640px) {
+  .luxury-shell::after {
+    inset: 0.75rem;
+    border-radius: 1.75rem;
+  }
+
   .gold-button,
   .ghost-button {
     padding-inline: 1.25rem;
     letter-spacing: 0.16em;
   }
 
-  .service-card {
-    min-height: 14rem;
-    padding: 1.6rem;
+  .eyebrow {
+    letter-spacing: 0.2em;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    width: 1.25rem;
+  }
+
+  .service-card,
+  .pricing-card {
+    padding: 1.45rem;
   }
 }
