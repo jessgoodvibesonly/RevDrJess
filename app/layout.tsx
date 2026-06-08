@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RevDrJess",
-  description: "Honouring Love, Life & Legacy",
+  title: "RevDrJess | Rev. Dr. Jessica Simmonds",
+  description: "Ceremonies for Love, Life & Legacy by Rev. Dr. Jessica Simmonds.",
   icons: {
     icon: "/images/favicon.png",
   },
