@@ -88,6 +88,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#030303] text-white">
       <div className="luxury-shell relative mx-auto w-full max-w-7xl px-6 py-6 sm:px-8 lg:px-12">
+        <div className="sparkle-field" aria-hidden="true" />
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="gold-orb gold-orb-primary" />
           <div className="gold-orb gold-orb-secondary" />
@@ -116,14 +117,19 @@ export default function Home() {
           </nav>
         </header>
 
-        <section id="home" className="relative z-10 grid min-h-[calc(100vh-6rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-          <div className="text-center lg:text-left">
+        <section id="home" className="hero-cloud-stage relative z-10 grid min-h-[calc(100vh-6rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+          <div className="cloud-glow cloud-glow-hero" aria-hidden="true" />
+          <div className="cloud-glow cloud-glow-pearl" aria-hidden="true" />
+          <div className="cloud-glow cloud-glow-cream" aria-hidden="true" />
+          <div className="hero-light" aria-hidden="true" />
+          <div className="hero-sparkles" aria-hidden="true" />
+          <div className="hero-copy relative z-10 text-center lg:text-left">
             <p className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#d8b35d]/25 bg-[#d8b35d]/10 px-5 py-2 text-xs uppercase tracking-[0.3em] text-[#f5d58a] shadow-[0_0_38px_rgba(216,179,93,0.16)]">
               <span className="h-px w-8 bg-[#d8b35d]" />
               Honouring Love, Life & Legacy
             </p>
 
-            <h1 className="max-w-5xl font-serif text-5xl font-normal leading-[0.95] tracking-[-0.04em] text-balance text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="hero-title max-w-5xl font-serif text-5xl font-normal leading-[0.95] tracking-[-0.04em] text-balance text-white sm:text-6xl md:text-7xl lg:text-8xl">
               Rev. Dr. Jessica Simmonds
             </h1>
 
@@ -147,7 +153,7 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="hero-card relative mx-auto w-full max-w-xl p-6 sm:p-8">
+          <aside className="hero-card relative z-10 mx-auto w-full max-w-xl p-6 sm:p-8">
             <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full border border-[#d8b35d]/25" />
             <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full border border-white/10" />
             <div className="relative rounded-[2rem] border border-[#d8b35d]/25 bg-black/35 p-8 text-center shadow-2xl shadow-black/40 sm:p-10">

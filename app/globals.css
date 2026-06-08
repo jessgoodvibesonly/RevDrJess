@@ -18,15 +18,20 @@ body {
 
 body {
   background:
-    radial-gradient(circle at 50% 0%, rgba(216, 179, 93, 0.12), transparent 34rem),
-    radial-gradient(circle at 100% 30%, rgba(245, 213, 138, 0.07), transparent 30rem),
-    #030303;
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.15), transparent 28rem),
+    radial-gradient(ellipse at 48% 3%, rgba(246, 241, 225, 0.14), transparent 38rem),
+    radial-gradient(circle at 100% 30%, rgba(224, 196, 135, 0.08), transparent 30rem),
+    linear-gradient(180deg, #050505 0%, #030303 42%, #080604 100%);
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .font-serif {
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.luxury-shell {
+  isolation: isolate;
 }
 
 .luxury-shell::before {
@@ -47,16 +52,33 @@ body {
   inset: 1.25rem;
   z-index: -15;
   pointer-events: none;
-  border: 1px solid rgba(216, 179, 93, 0.08);
+  border: 1px solid rgba(224, 196, 135, 0.11);
   border-radius: 2.5rem;
+  box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.025), 0 0 80px rgba(224, 196, 135, 0.045);
+}
+
+.sparkle-field {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  opacity: 0.72;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.88) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(232, 204, 145, 0.72) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255, 252, 243, 0.58) 0 1.2px, transparent 2px);
+  background-position: 4% 9%, 78% 14%, 18% 72%;
+  background-size: 19rem 19rem, 25rem 25rem, 31rem 31rem;
+  animation: sparkle-drift 18s ease-in-out infinite alternate;
+  mask-image: linear-gradient(180deg, black, rgba(0, 0, 0, 0.92) 44%, transparent 100%);
 }
 
 .gold-orb {
   position: absolute;
   border-radius: 9999px;
   background: #d8b35d;
-  filter: blur(98px);
-  opacity: 0.22;
+  filter: blur(112px);
+  opacity: 0.16;
 }
 
 .gold-orb-primary {
@@ -71,7 +93,7 @@ body {
   top: 34rem;
   height: 25rem;
   width: 25rem;
-  opacity: 0.17;
+  opacity: 0.12;
 }
 
 .gold-orb-tertiary {
@@ -79,7 +101,7 @@ body {
   left: 16%;
   height: 20rem;
   width: 20rem;
-  opacity: 0.11;
+  opacity: 0.08;
 }
 
 .gold-line {
@@ -88,14 +110,122 @@ body {
   height: 1px;
   width: 90vw;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(216, 179, 93, 0.36), transparent);
+  background: linear-gradient(90deg, transparent, rgba(224, 196, 135, 0.38), rgba(255, 255, 255, 0.24), rgba(224, 196, 135, 0.38), transparent);
+}
+
+.hero-cloud-stage {
+  isolation: isolate;
+}
+
+.hero-cloud-stage::before,
+.hero-cloud-stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -3;
+  border-radius: 9999px;
+  filter: blur(44px);
+  opacity: 0.78;
+  transform: translateZ(0);
+}
+
+.hero-cloud-stage::before {
+  inset: 8% -18% auto -14%;
+  height: 26rem;
+  background:
+    radial-gradient(ellipse at 18% 58%, rgba(255, 255, 255, 0.34), transparent 39%),
+    radial-gradient(ellipse at 38% 45%, rgba(247, 243, 232, 0.28), transparent 36%),
+    radial-gradient(ellipse at 62% 58%, rgba(255, 255, 255, 0.25), transparent 42%),
+    radial-gradient(ellipse at 83% 46%, rgba(239, 232, 211, 0.2), transparent 36%);
+}
+
+.hero-cloud-stage::after {
+  inset: auto -12% 10% -10%;
+  height: 19rem;
+  background:
+    radial-gradient(ellipse at 25% 55%, rgba(255, 255, 255, 0.18), transparent 45%),
+    radial-gradient(ellipse at 55% 47%, rgba(250, 248, 240, 0.16), transparent 44%),
+    radial-gradient(ellipse at 80% 58%, rgba(255, 255, 255, 0.14), transparent 43%);
+}
+
+.cloud-glow,
+.hero-light,
+.hero-sparkles {
+  position: absolute;
+  pointer-events: none;
+}
+
+.cloud-glow {
+  z-index: -4;
+  border-radius: 9999px;
+  filter: blur(72px);
+  mix-blend-mode: screen;
+}
+
+.cloud-glow-hero {
+  top: 8%;
+  left: 4%;
+  height: 34rem;
+  width: 62rem;
+  background:
+    radial-gradient(ellipse at 30% 48%, rgba(255, 255, 255, 0.38), transparent 48%),
+    radial-gradient(ellipse at 64% 44%, rgba(244, 239, 224, 0.24), transparent 44%);
+  opacity: 0.72;
+}
+
+.cloud-glow-pearl {
+  top: 20%;
+  right: -12%;
+  height: 31rem;
+  width: 45rem;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.27), transparent 63%);
+  opacity: 0.78;
+}
+
+.cloud-glow-cream {
+  bottom: 5%;
+  left: 18%;
+  height: 22rem;
+  width: 44rem;
+  background: radial-gradient(ellipse, rgba(238, 229, 205, 0.2), transparent 66%);
+  opacity: 0.58;
+}
+
+.hero-light {
+  z-index: -2;
+  top: 17%;
+  left: -6%;
+  height: 36rem;
+  width: min(58rem, 112vw);
+  background:
+    radial-gradient(circle at 40% 42%, rgba(255, 255, 255, 0.26), transparent 28%),
+    radial-gradient(circle at 48% 46%, rgba(238, 227, 204, 0.16), transparent 42%);
+  filter: blur(22px);
+}
+
+.hero-sparkles {
+  inset: 0;
+  z-index: -1;
+  opacity: 0.82;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(225, 196, 130, 0.82) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.58) 0 1.3px, transparent 2.2px);
+  background-position: 12% 26%, 72% 19%, 42% 74%;
+  background-size: 9rem 9rem, 13rem 13rem, 17rem 17rem;
+  animation: sparkle-float 11s ease-in-out infinite alternate;
+  mask-image: radial-gradient(ellipse at 44% 42%, black 0 36%, transparent 76%);
+}
+
+.hero-title {
+  text-shadow: 0 0 34px rgba(255, 255, 255, 0.22), 0 0 78px rgba(238, 229, 205, 0.13);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: #f5d58a;
+  color: #f1d79f;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.28em;
@@ -108,7 +238,7 @@ body {
   content: "";
   height: 1px;
   width: 2rem;
-  background: rgba(216, 179, 93, 0.78);
+  background: linear-gradient(90deg, transparent, rgba(224, 196, 135, 0.88), transparent);
 }
 
 .gold-button,
@@ -128,16 +258,17 @@ body {
 }
 
 .gold-button {
-  border: 1px solid rgba(245, 213, 138, 0.72);
-  background: linear-gradient(135deg, #f7dfa1, #c69534 52%, #ffe5a6);
+  border: 1px solid rgba(238, 214, 158, 0.78);
+  background: linear-gradient(135deg, #fff4d5, #d0a653 52%, #f5dfab);
   color: #171003;
-  box-shadow: 0 0 42px rgba(216, 179, 93, 0.31), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 34px rgba(224, 196, 135, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.62);
 }
 
 .ghost-button {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .gold-button:hover,
@@ -146,25 +277,27 @@ body {
 }
 
 .gold-button:hover {
-  box-shadow: 0 0 58px rgba(216, 179, 93, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.14), 0 0 58px rgba(224, 196, 135, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .ghost-button:hover {
-  border-color: rgba(245, 213, 138, 0.56);
-  color: #f5d58a;
+  border-color: rgba(238, 214, 158, 0.58);
+  color: #f1d79f;
+  box-shadow: 0 0 42px rgba(255, 255, 255, 0.08), 0 0 38px rgba(224, 196, 135, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .hero-card,
 .section-panel,
 .cta-panel {
-  border: 1px solid rgba(216, 179, 93, 0.17);
+  border: 1px solid rgba(224, 196, 135, 0.2);
   border-radius: 2.5rem;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
-    linear-gradient(180deg, rgba(216, 179, 93, 0.065), rgba(0, 0, 0, 0)),
-    rgba(255, 255, 255, 0.025);
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.024)),
+    radial-gradient(circle at 28% 0%, rgba(255, 255, 255, 0.12), transparent 28rem),
+    linear-gradient(180deg, rgba(224, 196, 135, 0.07), rgba(0, 0, 0, 0)),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42), 0 0 58px rgba(255, 255, 255, 0.045), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px) saturate(135%);
 }
 
 .service-card,
@@ -172,13 +305,14 @@ body {
 .pricing-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(224, 196, 135, 0.18);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.022)),
-    rgba(255, 255, 255, 0.024);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(16px);
-  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.1), transparent 12rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.028);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(18px) saturate(128%);
+  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease, box-shadow 260ms ease;
 }
 
 .service-card {
@@ -208,15 +342,32 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  border: 1px solid rgba(216, 179, 93, 0.42);
-  color: #f5d58a;
-  background: rgba(216, 179, 93, 0.1);
+  border: 1px solid rgba(224, 196, 135, 0.46);
+  color: #f1d79f;
+  background: rgba(224, 196, 135, 0.1);
+  box-shadow: 0 0 22px rgba(224, 196, 135, 0.16);
 }
 
 .pricing-card {
-  border-color: rgba(216, 179, 93, 0.24);
+  border-color: rgba(224, 196, 135, 0.26);
   border-radius: 1.75rem;
   padding: 1.7rem;
+}
+
+.service-card::before,
+.credential-card::before,
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.42) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(224, 196, 135, 0.42) 0 1px, transparent 1.6px);
+  background-position: 16% 18%, 84% 22%;
+  background-size: 13rem 13rem, 17rem 17rem;
+  opacity: 0.2;
+  transition: opacity 260ms ease;
 }
 
 .service-card::after,
@@ -227,7 +378,7 @@ body {
   position: absolute;
   inset: auto -20% -55% -20%;
   height: 11rem;
-  background: radial-gradient(circle, rgba(216, 179, 93, 0.22), transparent 68%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), rgba(234, 214, 168, 0.12) 36%, transparent 68%);
   opacity: 0;
   transition: opacity 260ms ease;
 }
@@ -242,10 +393,18 @@ body {
 .credential-card:hover,
 .pricing-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245, 213, 138, 0.38);
+  border-color: rgba(238, 214, 158, 0.44);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.032)),
-    rgba(255, 255, 255, 0.03);
+    radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.14), transparent 13rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.034)),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.4), 0 0 48px rgba(255, 255, 255, 0.075), 0 0 42px rgba(224, 196, 135, 0.11);
+}
+
+.service-card:hover::before,
+.credential-card:hover::before,
+.pricing-card:hover::before {
+  opacity: 0.38;
 }
 
 .service-card:hover::after,
@@ -254,10 +413,48 @@ body {
   opacity: 1;
 }
 
+@keyframes sparkle-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.62;
+  }
+
+  100% {
+    transform: translate3d(0.8rem, -1rem, 0);
+    opacity: 0.95;
+  }
+}
+
+@keyframes sparkle-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-1rem, -1.4rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle-field,
+  .hero-sparkles {
+    animation: none;
+  }
+}
+
 @media (max-width: 640px) {
   .luxury-shell::after {
     inset: 0.75rem;
     border-radius: 1.75rem;
+  }
+
+  .cloud-glow-hero {
+    left: -32%;
+    width: 44rem;
+  }
+
+  .hero-light {
+    left: -34%;
   }
 
   .gold-button,
